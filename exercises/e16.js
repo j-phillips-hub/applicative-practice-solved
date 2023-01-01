@@ -5,7 +5,18 @@ import { data } from "../data/data";
 // Return example: 1902
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
+  const obj = {};
+
+  data.asteroids.map((year) => {
+    obj[year.discoveryYear] = obj[year.discoveryYear] + 1 || 1;
+  });
+
+  let keys = Object.keys(obj);
+  let value = Object.values(obj);
+  let max = Math.max(...value)
+  let index = value.findIndex((num) => { return num == max });
+
+  return Number(keys[index]);
 }
 
 
