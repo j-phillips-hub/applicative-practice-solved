@@ -5,10 +5,8 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getAsteroidDataByName(data, asteroidName) {
-  asteroidName = '624 Hektor';
-  const result = data.asteroids.filter(asteroid => asteroid.name === asteroidName)
-  const asteroid = result[0]
-  return asteroid;
+  return data.asteroids
+    .find(asteroid => asteroid.name === asteroidName)
 }
 
 

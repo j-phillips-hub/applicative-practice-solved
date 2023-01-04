@@ -5,12 +5,9 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getEarthData(data) {
-  return data.planets.reduce((obj) => {
-    return obj;
-  }, data.planets[6])
+  return data.planets
+    .find(planet => planet.name === 'Earth');
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"
